@@ -1,0 +1,48 @@
+<launch>
+    <arg name="camera1_id" default="017322074156" />
+    <arg name="camera2_id" default="950122070596" />
+    <!-- <arg name="camera3_id" default="017322073307" />
+    <arg name="camera4_id" default="017322074043" /> -->
+    <arg name="rviz_env" default="$(find t_camera)/config/camera_integration.rviz" />
+    <arg name="filter" default="spatial,temporal,pointcloud" />
+    <arg name="save_topic" default="/rs1/depth/color/transformed/points" />
+
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="camera" value="cam_1"/>
+        <arg name="serial_no" value="$(arg camera1_id)"/>
+        <arg name="enable_pointcloud" value="true" />
+        <arg name="filters" value="$(arg filter)" />
+    </include>
+
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="camera" value="cam_2"/>
+        <arg name="serial_no" value="$(arg camera2_id)"/>
+        <arg name="enable_pointcloud" value="true" />
+        <arg name="filters" value="$(arg filter)" />
+    </include>
+
+    <!-- <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="camera" value="cam_3"/>
+        <arg name="serial_no" value="$(arg camera3_id)"/>
+        <arg name="enable_pointcloud" value="true" />
+        <arg name="filters" value="$(arg filter)" />
+    </include>
+
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="camera" value="cam_4"/>
+        <arg name="serial_no" value="$(arg camera4_id)"/>
+        <arg name="enable_pointcloud" value="true" />
+        <arg name="filters" value="$(arg filter)" />
+    </include> -->
+
+
+    <node name="realsense_transform" pkg="t_camera" type="realsense_transform"/>
+    
+    <!-- <node name="pointcloud_save" pkg="t_camera" type="pointcloud_save" output="screen">
+        <param name="input" value="$(arg save_topic)" />
+        <param name="prefix" value="$(arg save_path)" />
+    </node> -->
+	
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_env)" />
+
+</launch>
