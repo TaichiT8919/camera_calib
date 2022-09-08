@@ -2,9 +2,9 @@
 ## Quick Start
 ### Make transform matrix
 
-'''
+```
 $ python3 gen_cameras_matrix.py
-'''
+```
 
 **Note:　Global variables that need to be modified (line 10 - 19).**
 1. save_path：Path name to save the transform matrix.
