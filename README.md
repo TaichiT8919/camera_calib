@@ -9,15 +9,11 @@ See https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_
 $ python3 gen_cameras_matrix.py
 ```
 
-**Note:　Global variables that need to be modified (line 10 - 19).**
-
-a) save_path：Path name to save the transform matrix.
-
-b) CAMERA_ID_n：ID of RealSense to be used.
-
-c) MESUREMENT_TIME：Time to observe the marker.
-
-d) MEASUREMENT_NUM：Number of observation times.
+**Note:　Global variables that need to be modified (line 10 - 19).**<br>
+a) save_path：Path name to save the transform matrix.<br>
+b) CAMERA_ID_n：ID of RealSense to be used.  <br>
+c) MESUREMENT_TIME：Time to observe the marker.<br>
+d) MEASUREMENT_NUM：Number of observation times.<br>
 
 
 ### 3.Display by rviz
@@ -26,10 +22,10 @@ d) MEASUREMENT_NUM：Number of observation times.
 $ roslaunch t_camera cameras_launch.launch
 ```
 
-**Note:　Variables that need to be modified (line 10 - 19).**
+**Note:　Variables that need to be modified (line 10 - 19).**<br>
 
-In ./src/realsense_transform.cpp(line 101).
+In ./src/realsense_transform.cpp(line 101).<br>
 a) input_csv_file_path_12：Path of the transform matrix file (.csv).
 
-In ./launch/caeras_launch.launch(line 2,3)
+In ./launch/caeras_launch.launch(line 2,3)<br>
 a) camera1_id/camera2_id：ID of RealSense to be used.
