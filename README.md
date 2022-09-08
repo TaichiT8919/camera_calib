@@ -28,10 +28,8 @@ $ roslaunch t_camera cameras_launch.launch
 
 **Note:　Variables that need to be modified (line 10 - 19).**
 
-./src/realsense_transform.cpp(line 101).
-
+In ./src/realsense_transform.cpp(line 101).
 a) input_csv_file_path_12：Path of the transform matrix file (.csv).
 
-./launch/caeras_launch.launch(line 2,3)
-
+In ./launch/caeras_launch.launch(line 2,3)
 a) camera1_id/camera2_id：ID of RealSense to be used.
