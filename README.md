@@ -23,7 +23,6 @@ $ roslaunch t_camera cameras_launch.launch
 ```
 
 **Note:　Variables that need to be modified (line 10 - 19).**<br>
-
 In ./src/realsense_transform.cpp(line 101).<br>
 a) input_csv_file_path_12：Path of the transform matrix file (.csv).
 
